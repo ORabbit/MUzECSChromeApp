@@ -1,0 +1,20 @@
+{
+  "name": "mrjones Extension",
+  "version": "0.1",
+  "manifest_version": 2,
+  "description": "A Chrome Extension",
+  "app": {
+    "background": {
+      "scripts": [ "background.js" ]
+    }
+  },
+  "permissions": [
+    "extension",
+    "serial",
+    "usb",
+    "http://*/"
+  ],
+  "web_accessible_resources": [
+    "blink-example.hex"
+  ]
+}
