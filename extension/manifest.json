@@ -1,8 +1,8 @@
 {
-  "name": "mrjones Extension",
+  "name": "MUBlocklyDuino App",
   "version": "0.1",
-  "manifest_version": 2,
-  "description": "A Chrome Extension",
+  "manifest_version": 1,
+  "description": "A chrome extenstion to upload compiled sketches to an arduino Leonardo",
   "app": {
     "background": {
       "scripts": [ "background.js" ]
