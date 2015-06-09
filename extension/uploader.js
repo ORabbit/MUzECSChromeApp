@@ -80,6 +80,27 @@ function readFromBuffer(connectionId, maxBytes, callback) {
   callback({bytesRead: bytes, data: accum});
 }
 
+document.getElementById("getHexUrl").onclick = httpGet;
+
+function httpGet()
+{
+  theUrl = "www.example.com" // Unknown at the moment !!!
+  var xmlHttp = new XMLHttpRequest();
+  document.getElementById("urlNotReady").style.display = "inline";
+  document.getElementById("urlReady").style.display = "none";
+  xmlHttp.onreadystatechange = function()
+  {
+    if (xmlHttp.readyState==4 && xmlHttp.status==200)
+    {
+      document.getElementById("sketch_url").value = xmlHttp.responseText;
+      document.getElementById("urlNotReady").style.display = "none";
+      document.getElementById("urlReady").style.display = "inline";
+    }
+  }
+  xmlHttp.open( "GET", theUrl, true );
+  xmlHttp.send( null );
+}
+
 // TODO: board and prototocol should be separate variables
 function uploadSketch(deviceName, protocol, sketchUrl) {
   log(kDebugNormal, "Uploading blink sketch from: " + sketchUrl);

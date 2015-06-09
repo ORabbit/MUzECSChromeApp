@@ -18,6 +18,17 @@
     "blink-example.hex"
   ],
 
+  "content_scripts": [
+      {
+          "matches": ["<all_urls>"],
+          "js": ["content.js"]
+      }
+  ],
+
+	"externally_connectable": {
+		"matches": ["<all_urls>"]
+	},
+
 	"icons": {
 		"16": "icon16.png",
 		"48": "icon48.png",
