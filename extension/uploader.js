@@ -84,7 +84,7 @@ document.getElementById("getHexUrl").onclick = httpGet;
 
 function httpGet()
 {
-  theUrl = "www.example.com" // Unknown at the moment !!!
+  theUrl = "http://127.0.0.1:8080" // Unknown at the moment !!!
   var xmlHttp = new XMLHttpRequest();
   document.getElementById("urlNotReady").style.display = "inline";
   document.getElementById("urlReady").style.display = "none";
@@ -103,7 +103,7 @@ function httpGet()
 
 // TODO: board and prototocol should be separate variables
 function uploadSketch(deviceName, protocol, sketchUrl) {
-  log(kDebugNormal, "Uploading blink sketch from: " + sketchUrl);
+  log(kDebugNormal, "Uploading sketch from: " + sketchUrl);
   var hexfile = sketchUrl;
   //if (protocol == 'avr109' || protocol == 'avr109_beta') {
 		// hexfile = 'http://linode.mrjon.es/blink-micro.hex?bustcache=' + (new Date().getTime());
