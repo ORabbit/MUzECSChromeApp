@@ -93,10 +93,10 @@ function httpGet()
   {
     if (xmlHttp.readyState==4 && xmlHttp.status==200)
     {
-		if (xmlHttp.responseText != "file_not_found"){
+		if (!(xmlHttp.responseText === "file_not_found")){
 	      document.getElementById("sketch_url").value = xmlHttp.responseText;
    	   document.getElementById("urlNotReady").style.display = "none";
-     		 document.getElementById("urlReady").style.display = "inline";
+     		document.getElementById("urlReady").style.display = "inline";
 			document.getElementById("uploader_button").disabled = "";
 		}
     }
