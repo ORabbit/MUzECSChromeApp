@@ -93,9 +93,11 @@ function httpGet()
   {
     if (xmlHttp.readyState==4 && xmlHttp.status==200)
     {
+			tempUrl = xmlHttp.responseText;
+			tempUrl = tempUrl.substring(6, tempUrl.length - 6);
 		  if (!(tempUrl === "file_not_found")){
         document.getElementById("sketch_url").value = xmlHttp.responseText;
-   	    document.getElementById("urlNotReady").style.display = "none";
+   	  document.getElementById("urlNotReady").style.display = "none";
      	  document.getElementById("urlReady").style.display = "inline";
         document.getElementById("uploader_button").disabled = "";
 		  }
