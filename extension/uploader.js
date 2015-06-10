@@ -93,13 +93,13 @@ function httpGet()
   {
     if (xmlHttp.readyState==4 && xmlHttp.status==200)
     {
-		var tempUrl = xmlHttp.responseText;
-		if (!(tempUrl === "file_not_found")){
-	      document.getElementById("sketch_url").value = tempUrl;
+		//var tempUrl = xmlHttp.responseText;
+		//if (!(tempUrl === "file_not_found")){
+	      document.getElementById("sketch_url").value = xmlHttp.responseText;
    	   document.getElementById("urlNotReady").style.display = "none";
      		document.getElementById("urlReady").style.display = "inline";
 			document.getElementById("uploader_button").disabled = "";
-		}
+		//}
     }
   }
   xmlHttp.open( "GET", theUrl, true );
