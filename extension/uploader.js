@@ -88,6 +88,7 @@ function httpGet()
   var xmlHttp = new XMLHttpRequest();
   document.getElementById("urlNotReady").style.display = "inline";
   document.getElementById("urlReady").style.display = "none";
+  document.getElementById("uploader_button").disabled = "disabled";
   xmlHttp.onreadystatechange = function()
   {
     if (xmlHttp.readyState==4 && xmlHttp.status==200)
@@ -95,6 +96,7 @@ function httpGet()
       document.getElementById("sketch_url").value = xmlHttp.responseText;
       document.getElementById("urlNotReady").style.display = "none";
       document.getElementById("urlReady").style.display = "inline";
+		document.getElementById("uploader_button").disabled = "";
     }
   }
   xmlHttp.open( "GET", theUrl, true );
