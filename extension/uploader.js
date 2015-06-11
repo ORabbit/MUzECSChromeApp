@@ -84,7 +84,7 @@ document.getElementById("getHexUrl").onclick = httpGet;
 
 function httpGet()
 {
-  theUrl = "http://127.0.0.1:8080" // Unknown at the moment !!!
+  theUrl = "http://134.48.6.40:8080"
   var xmlHttp = new XMLHttpRequest();
   document.getElementById("urlNotReady").style.display = "inline";
   document.getElementById("urlReady").style.display = "none";
