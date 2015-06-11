@@ -94,9 +94,9 @@ function httpGet()
     if (xmlHttp.readyState==4 && xmlHttp.status==200)
     {
 			tempUrl = xmlHttp.responseText;
-			tempUrl = tempUrl.substring(6, tempUrl.length - 6);
+			tempUrl = tempUrl.substring(6, tempUrl.length - 7); // To get rid of <html> tags on both sides of URL
 		  if (!(tempUrl === "file_not_found")){
-        document.getElementById("sketch_url").value = xmlHttp.responseText;
+        document.getElementById("sketch_url").value = tempUrl;
    	  document.getElementById("urlNotReady").style.display = "none";
      	  document.getElementById("urlReady").style.display = "inline";
         document.getElementById("uploader_button").disabled = "";
