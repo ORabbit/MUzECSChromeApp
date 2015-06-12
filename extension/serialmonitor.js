@@ -70,6 +70,9 @@ function uploadButtonPressed() {
   var url = urlBox.value;
 
   uploadSketch(selectedPort, protocol, url);
+  if(protocol === "avr109") {
+    detectDevices();
+  }
 }
 
 function doOnEnter(targetFunction) {

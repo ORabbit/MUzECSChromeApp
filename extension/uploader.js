@@ -111,10 +111,6 @@ function httpGet()
 function uploadSketch(deviceName, protocol, sketchUrl) {
   log(kDebugNormal, "Uploading sketch from: " + sketchUrl);
   var hexfile = sketchUrl;
-  //if (protocol == 'avr109' || protocol == 'avr109_beta') {
-		// hexfile = 'http://linode.mrjon.es/blink-micro.hex?bustcache=' + (new Date().getTime());
-  		//hexfile = 'http://www.mscs.mu.edu/~cohare/Blink.cpp.hex';
-  //}
 
   fetchProgram(hexfile, function(programBytes) { 
     log(kDebugFine, "Fetched program. Uploading to: " + deviceName);
@@ -707,6 +703,7 @@ function avrDrainedAgain(readArg, connectionId) {
     // Start the protocol
 
     avrWriteThenRead(connectionId, [ AVR.SOFTWARE_VERSION ], 2, avrGotVersion);
+	 detectDevices();
   }
 }
 
