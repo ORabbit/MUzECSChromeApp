@@ -96,10 +96,11 @@ function httpGet()
 			tempUrl = xmlHttp.responseText;
 			tempUrl = tempUrl.substring(6, tempUrl.length - 7); // To get rid of <html> tags on both sides of URL
 		  if (!(tempUrl === "file_not_found")){
-        document.getElementById("sketch_url").value = tempUrl;
-   	  document.getElementById("urlNotReady").style.display = "none";
-     	  document.getElementById("urlReady").style.display = "inline";
-        document.getElementById("uploader_button").disabled = "";
+          // Changes html code to setup URL, display checkmark, and enable upload button
+          document.getElementById("sketch_url").value = tempUrl;
+   	    document.getElementById("urlNotReady").style.display = "none";
+     	    document.getElementById("urlReady").style.display = "inline";
+          document.getElementById("uploader_button").disabled = "";
 		  }
     }
   }
