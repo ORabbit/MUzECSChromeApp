@@ -1,4 +1,6 @@
-var kBitrate = 9600; // TODO(mrjones): make a UI option
+///var kBitrate = 9600; // TODO(mrjones): make a UI option
+var kBitrate = 115200; // TODO(mrjones): make a UI option
+
 var kUnconnected = -1;
 
 // Current State
@@ -158,7 +160,7 @@ function disconnect() {
 
 function doSend() {
   var input = document.getElementById("todevice_data");
-  var data = input.value;
+  var data = input.value+"\n";
   input.value = "";
 
   log(kDebugFine, "SENDING " + data + " ON CONNECTION: " + connectionId_);
