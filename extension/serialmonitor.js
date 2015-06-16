@@ -198,7 +198,8 @@ function readHandler(readArg) {
   var str = binaryToString(readArg.data);
   str.replace("\n", "<br/>");
   // XSS like woah, but who cares.
-  document.getElementById("fromdevice_data").innerHTML += str;
+  document.getElementById("fromdevice_data").innerHTML += str + "<br/>";
+  document.getElementById("fromdevice_data").scrollTop = document.getElementById("fromdevice_data").scrollHeight;
 }
 
 
