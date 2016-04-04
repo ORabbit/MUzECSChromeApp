@@ -84,6 +84,9 @@ document.getElementById("getHexUrl").onclick = httpGet;
 
 function httpGet()
 {
+  if (document.getElementById("hash_id").value == "") {
+    //Browser.msgBox("Please paste your unique hash ID (found in the dialogue after clicking the green \'upload\' button on the MUzECS website)");
+  }else {
   theUrl = "http://134.48.6.40:8080"
   var xmlHttp = new XMLHttpRequest();
   document.getElementById("urlNotReady").style.display = "inline";
@@ -105,7 +108,8 @@ function httpGet()
     }
   }
   xmlHttp.open( "GET", theUrl, true );
-  xmlHttp.send( null );
+  xmlHttp.send( document.getElementById("hash_id").value);//null );
+  }
 }
 
 // TODO: board and prototocol should be separate variables

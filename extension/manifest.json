@@ -1,6 +1,6 @@
 {
   "name": "MUzECS",
-  "version": "0.61",
+  "version": "0.62",
   "manifest_version": 2,
   "description": "A chrome extenstion to upload compiled sketches to an arduino Leonardo",
   "app": {
