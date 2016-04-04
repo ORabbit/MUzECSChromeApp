@@ -3,6 +3,8 @@ var kBitrate = 115200; // TODO(mrjones): make a UI option
 
 var kUnconnected = -1;
 
+var timePassed = 0;
+
 // Current State
 var connectionId_ = kUnconnected;
 
@@ -111,10 +113,12 @@ function detectDevices() {
 detectDevices();
 
 function sendDataToDevice() {
+  var d = new Date();
   if (connectionId_ == kUnconnected) {
     log(kDebugError, "ERROR: Not connected");
-  } else {
+  } else if ((d.getTime() - timePassed) > 100){
     doSend();
+    timePassed = d.getTime();
   }
 }
 
