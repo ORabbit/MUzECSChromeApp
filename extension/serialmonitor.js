@@ -14,7 +14,7 @@ var ids = {
   refreshDevicesButton: "devices_refresh",
   refreshDevicesMenu: "devices_menu",
   sendText: "todevice_data",
-  sendButton: "todevice_send",
+  //sendButton: "todevice_send",
   statusText: "status",
   uploaderButton: "uploader_button",
   logLevelMenu: "log_level_picker"
@@ -27,8 +27,8 @@ log(kDebugFine, "-- BEGIN --");
 document.getElementById(ids.sendText)
   .addEventListener('keydown', sendDataToDevice);
 
-document.getElementById("todevice_send")
-  .addEventListener('click', sendDataToDevice);
+//document.getElementById("todevice_send")
+//  .addEventListener('click', sendDataToDevice);
 
 document.getElementById(ids.refreshDevicesButton)
   .addEventListener('click', detectDevices);
