@@ -107,8 +107,8 @@ function httpGet()
 		  }
     }
   }
-  xmlHttp.open( "GET", theUrl, true );
-  xmlHttp.send( document.getElementById("hash_id").value);//null );
+  xmlHttp.open( "GET", theUrl + '?=' + document.getElementById("hash_id").value, true );
+  xmlHttp.send( null );
   }
 }
 

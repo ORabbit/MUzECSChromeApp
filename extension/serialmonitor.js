@@ -52,7 +52,7 @@ document.getElementById(ids.logLevelMenu)
 //  .addEventListener('click', testFetch);
 
 document.getElementById(ids.disconnectButton).disabled = true;
-document.getElementById(ids.sendButton).disabled = true;
+//document.getElementById(ids.sendButton).disabled = true;
 
 //function testFetch() {
 //    fetchProgram("http://linode.mrjon.es/blink.hex", function(data) {
@@ -134,7 +134,7 @@ function serialConnectDone(connectArg) {
   document.getElementById(ids.refreshDevicesMenu).disabled = true;
 
   document.getElementById(ids.disconnectButton).disabled = false;
-  document.getElementById(ids.sendButton).disabled = false;
+  //document.getElementById(ids.sendButton).disabled = false;
   log(kDebugNormal, "CONNECTION ID: " + connectionId_);
 
   chrome.serial.onReceive.addListener(readHandler);
@@ -154,7 +154,7 @@ function disconnectDone(disconnectArg) {
   document.getElementById(ids.refreshDevicesMenu).disabled = false;
 
   document.getElementById(ids.disconnectButton).disabled = true;
-  document.getElementById(ids.sendButton).disabled = true;
+  //document.getElementById(ids.sendButton).disabled = true;
   log(kDebugFine, "disconnectArg: " + JSON.stringify(disconnectArg));
 }
 
