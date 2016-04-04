@@ -172,8 +172,10 @@ function doSend() {
   input.value = "";
 
   log(kDebugFine, "SENDING " + data + " ON CONNECTION: " + connectionId_);
-  var buffer = new ArrayBuffer(1);
+  var buffer = new ArrayBuffer(3);
   buffer[0] = data.charCodeAt(0) - 'a'.charCodeAt(0) + 10;
+  buffer[1] = '\r';
+  buffer[2] = '\n';
   chrome.serial.send(connectionId_, buffer, sendDone);
 }
 
