@@ -21,6 +21,10 @@ var ids = {
 configureVisibleLogging(ids.statusText);
 
 log(kDebugFine, "-- BEGIN --");
+
+document.getElementById(ids.sendText)
+  .addEventListener('keypress', sendDataToDevice);
+
 document.getElementById("todevice_send")
   .addEventListener('click', sendDataToDevice);
 
