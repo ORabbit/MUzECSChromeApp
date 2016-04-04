@@ -1,5 +1,5 @@
-///var kBitrate = 9600; // TODO(mrjones): make a UI option
-var kBitrate = 115200; // TODO(mrjones): make a UI option
+var kBitrate = 9600; // TODO(mrjones): make a UI option
+//var kBitrate = 115200; // TODO(mrjones): make a UI option
 
 var kUnconnected = -1;
 
@@ -116,7 +116,7 @@ function sendDataToDevice() {
   var d = new Date();
   if (connectionId_ == kUnconnected) {
     log(kDebugError, "ERROR: Not connected");
-  } else if ((d.getTime() - timePassed) > 800){
+  } else if ((d.getTime() - timePassed) > 100){
     doSend();
     timePassed = d.getTime();
   }
