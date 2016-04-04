@@ -116,7 +116,7 @@ function sendDataToDevice() {
   var d = new Date();
   if (connectionId_ == kUnconnected) {
     log(kDebugError, "ERROR: Not connected");
-  } else if ((d.getTime() - timePassed) > 100){
+  } else if ((d.getTime() - timePassed) > 800){
     doSend();
     timePassed = d.getTime();
   }
